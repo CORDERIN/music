@@ -8,8 +8,8 @@ public class Album{
 
     public Artist artist;
     public Producer producer;
-    public string name;
-
-
+    public string nameAlmbum;
+    public string genderAlbum;
+    public DateTime releaseDate;
 
 }
