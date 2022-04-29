@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 public class Artist : Person {
 
     public string Musical_genre;
-    public DateTime ContractDate;
+    public string ContractDate;
 
 
 }
