@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 public abstract class Person{
 
     public string Name;
-    public Int64 CPF;
+    public string CPF;
     public DateTime BirthDate;
     public DateTime DeathDate;
 
