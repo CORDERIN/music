@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 public class Music{
 
    public string NameMusic;
-   public float TimeMusic;
+   public double TimeMusic;
    public string MusicalGender;
    public DateTime RelaseDate;
 
-   public Music(string name, float time, string Musical_Gender, DateTime RelaseDate){
+   public Music(string name, double time, string Musical_Gender, DateTime RelaseDate){
 
       this.NameMusic = name;
       this.TimeMusic = time;
