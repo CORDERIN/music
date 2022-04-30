@@ -9,6 +9,7 @@ public class Program{
         Masterworks.Musical_genres.Add("Eletrônica");
         Masterworks.Musical_genres.Add("Rap");
         Masterworks.Musical_genres.Add("Pop");
+        Masterworks.Musical_genres.Add("Rock");
 
         Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2019, 10, 04));
 
@@ -17,6 +18,14 @@ public class Program{
 
         Euphoria.Musics.Add(Mount_Everest);
         Euphoria.Musics.Add(Formula);
+
+        foreach(var element in Masterworks.Musical_genres){
+
+        Console.WriteLine(element);
+
+        }
+
+        Console.WriteLine("\n");
 
         foreach(var elemento in Euphoria.Musics){
 
