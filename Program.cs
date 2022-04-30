@@ -12,7 +12,7 @@ public class Program{
                              "\t| |    |                                                  |    | |\n" +
                              "\t| |    |                  MENU PRINCIPAL:                 |    | |\n" +
                              "\t| |    |                                                  |    | |\n" +
-                             "\t| |    |    1 -                                           |    | |\n" +
+                             "\t| |    |    1 - Todos os álbuns de um artista.            |    | |\n" +
                              "\t| |    |    2 -                                           |    | |\n" +
                              "\t| |    |    3 -                                           |    | |\n" +
                              "\t| |    |    4 -                                           |    | |\n" +
@@ -33,6 +33,10 @@ public class Program{
 
 
     static void Main(string[] args){
+
+        //Variáveis do menu
+
+        int option = 0;
 
         //Artistas
 
@@ -90,6 +94,20 @@ public class Program{
         //Adicionando os álbumns da produtora
 
         Masterworks.ProducerAlbums.Add(Euphoria);
+
+        //Parte de Interação com o Usuário
+
+       do
+       {
+           
+        Menu();
+        Console.Write("Escolha uma opção:");
+        option = int.Parse(Console.ReadLine());
+        
+       } while (option != 0);
+
+
+        
 
         //Percorrendo e imprimindo as músicas do Álbum Euphoria
 
