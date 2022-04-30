@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 public class Album{
 
-    public List<Music> musics;
+    public List<Music> Musics;
     public Artist artist;
     public Producer producer;
-    public string nameAlmbum;
-    public string genderAlbum;
-    public DateTime releaseDate;
+    public string NameAlmbum;
+    public string GenderAlbum;
+    public DateTime ReleaseDate;
 
 }

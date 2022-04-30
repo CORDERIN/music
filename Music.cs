@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 public class Music{
 
-   public string nameMusic;
-   public float timeMusic;
-   public string musicalGender;
-   public DateTime relaseDate;
+   public string NameMusic;
+   public float TimeMusic;
+   public string MusicalGender;
+   public DateTime RelaseDate;
     
 }
