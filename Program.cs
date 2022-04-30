@@ -1,34 +1,44 @@
 ﻿using System;
+using System.Collections.Generic;
 public class Program{
 
     static void Menu(){
 
-        Console.WriteLine("\t  _____________________________________________________________\n" +
-                             "\t.'  __________________________________________________________ '.\n" +
-                             "\t: .'                                                          '. :\n" +
-                             "\t| |      ________________________________________________      | |\n" +
-                             "\t| |    .:________________________________________________:.    | |\n" +
-                             "\t| |    |           INICIANDO EM LINQ E LAMBDA             |    | |\n" +
-                             "\t| |    |                                                  |    | |\n" +
-                             "\t| |    |                  MENU PRINCIPAL:                 |    | |\n" +
-                             "\t| |    |                                                  |    | |\n" +
-                             "\t| |    |    1 - Todos os álbuns de um artista.            |    | |\n" +
-                             "\t| |    |    2 -                                           |    | |\n" +
-                             "\t| |    |    3 -                                           |    | |\n" +
-                             "\t| |    |    4 -                                           |    | |\n" +
-                             "\t| |    |    5 -                                           |    | |\n" +
-                             "\t| |    |    6 -                                           |    | |\n" +
-                             "\t| |    |    7 -                                           |    | |\n" +
-                             "\t| |    |    0 -                                           |    | |\n" +
-                             "\t| |    |                                                  |    | |\n" +
-                             "\t| |    |            __________________________            |    | |\n" +
-                             "\t| |    |           |  |  |  |  |  |  |  |  |  |           |    | |\n" +
-                             "\t| |    '.__________|__|__|__|__|__|__|__|__|__|__________.'    | |\n" +
-                             "\t| |                                                            | |\n" +
-                             "\t| |                 Lista de Exercícios 1 - TP                 | |\n" +
-                             "\t: '.__________________________________________________________.' :\n" +
+        Console.WriteLine("\t  ______________________________________________________________\n" +
+                             "\t.'  __________________________________________________________  '.\n" +
+                             "\t: .'                                                          '.  :\n" +
+                             "\t| |       _______________________________________________       | |\n" +
+                             "\t| |    .:________________________________________________ :.    | |\n" +
+                             "\t| |    |           INICIANDO EM LINQ E LAMBDA              |    | |\n" +
+                             "\t| |    |                                                   |    | |\n" +
+                             "\t| |    |                  MENU PRINCIPAL:                  |    | |\n" +
+                             "\t| |    |                                                   |    | |\n" +
+                             "\t| |    |   1 - Todos os álbuns de um artista.              |    | |\n" +
+                             "\t| |    |   2 - Todos os álbuns de um ano.                  |    | |\n" +
+                             "\t| |    |   3 - As músicas de um Artista.                   |    | |\n" +
+                             "\t| |    |   4 - As músicas de um Artista em um Ano.         |    | |\n" +
+                             "\t| |    |   5 - Álbuns do mesmo gênero de um produtor.      |    | |\n" +
+                             "\t| |    |   6 - Álbuns do mesmo ano de um produtor.         |    | |\n" +
+                             "\t| |    |   7 - Lista decrescente dos Álbuns de um artista. |    | |\n" +
+                             "\t| |    |   0 - Sair                                        |    | |\n" +
+                             "\t| |    |                                                   |    | |\n" +
+                             "\t| |    |            __________________________             |    | |\n" +
+                             "\t| |    |           |  |  |  |  |  |  |  |  |  |            |    | |\n" +
+                             "\t| |    '.__________|__|__|__|__|__|__|__|__|__|__________ .'    | |\n" +
+                             "\t| |                                                             | |\n" +
+                             "\t| |                 Lista de Exercícios 1 - TP                  | |\n" +
+                             "\t: '.__________________________________________________________.'  :\n" +
                              "\t'._____________________________/__ /____________________________.'\n\n\n");
  
+    }
+
+    public static List<Album> AlbumsofArtist(Artist artist, string name){ 
+                                
+        
+        List<Album> ListAlbums = (from item in artist.ArtistAlbums where item.artist.Name.Equals(name) select item).ToList();
+
+        return ListAlbums;
+
     }
 
 
@@ -37,6 +47,7 @@ public class Program{
         //Variáveis do menu
 
         int option = 0;
+        string name = "";
 
         //Artistas
 
@@ -101,21 +112,74 @@ public class Program{
        {
            
         Menu();
-        Console.Write("Escolha uma opção:");
+        Console.Write("Escolha uma opção: ");
         option = int.Parse(Console.ReadLine());
+
+        if (option != 0){
+
+                Console.Clear();
+        }
+
+        switch(option){
+
+            case 1:
+
+            Console.Write("\nDigite um nome:");
+            name = Console.ReadLine();
+
+            List<Album> albums_of_artist = AlbumsofArtist(Labrinth, name);
+ 
+            Console.WriteLine("\nÁlbuns desse cantor:\n");
+
+            foreach(var elemento in albums_of_artist){
+
+             Console.WriteLine(elemento.NameAlmbum);
+
+            }
+
+            Console.ReadLine();
+
+            break;
+
+            case 2:
+
+            break;
+
+            case 3:
+
+            break;
+
+            case 4:
+
+            break;
+
+            case 5:
+
+            break;
+
+            case 6:
+
+            break;
+
+            case 7:
+
+            break;
+
+            case 0:
+
+            break;
+
+            default:
+
+            break;
+        }
         
        } while (option != 0);
 
 
-        
-
         //Percorrendo e imprimindo as músicas do Álbum Euphoria
 
-        foreach(var elemento in Euphoria.Musics){
-
-         Console.WriteLine(elemento.NameMusic);
-
-        }
+    
 
     }
 }
