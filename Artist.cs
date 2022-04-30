@@ -11,10 +11,10 @@ public class Artist : Person {
 
     public Artist(string Name, string CPF, DateTime BirthDate, DateTime DeathDate, string Musical_genre, DateTime ContractDate){
 
-        base.Name = Name;
-        base.CPF = CPF;
-        base.BirthDate = BirthDate;
-        base.DeathDate = DeathDate;
+        this.Name = Name;
+        this.CPF = CPF;
+        this.BirthDate = BirthDate;
+        this.DeathDate = DeathDate;
         this.Musical_genre = Musical_genre;
         this.ContractDate = ContractDate;
     }
