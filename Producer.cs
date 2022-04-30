@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 public class Producer : Person {
-    
     public List<string> Musical_genres;
+
+    public List<Album> ProducerAlbums;
     public string Music_producer;
 
      public Producer(string Name, string CPF, DateTime BirthDate, DateTime DeathDate, string Music_producer){
@@ -17,6 +18,7 @@ public class Producer : Person {
         base.DeathDate = DeathDate;
         this.Music_producer = Music_producer;
         Musical_genres = new List<string>();
+        ProducerAlbums = new List<Album>();
     }
 
 }
