@@ -6,6 +6,8 @@ public class Program{
 
         Producer Masterworks = new Producer("Milan Records", "061.743.987-12", new DateTime(1983, 03, 19), new DateTime(), "Masterworks");
 
-        Album album = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2019, 10, 04));
+        Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2019, 10, 04));
+
+        
     }
 }
