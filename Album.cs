@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 public class Album{
 
+    public List<Music> musics;
     public Artist artist;
     public Producer producer;
     public string nameAlmbum;

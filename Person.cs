@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 public abstract class Person{
-    public string Name;
-    public string CPF;
-    public DateTime BirthDate;
-    public DateTime DeathDate;
+    protected string Name;
+    protected string CPF;
+    protected DateTime BirthDate;
+    protected DateTime DeathDate;
 
 }
 

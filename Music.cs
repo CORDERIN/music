@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 public class Music{
 
-   public Album albumMusic;
    public string nameMusic;
    public float timeMusic;
    public string musicalGender;
    public DateTime relaseDate;
-
-
     
 }
