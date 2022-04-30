@@ -11,6 +11,16 @@ public class Album{
     public Producer producer;
     public string NameAlmbum;
     public string GenderAlbum;
+    public string AlbumCover;
     public DateTime ReleaseDate;
+
+    public Album(){
+
+        
+
+
+    }
+
+
 
 }
