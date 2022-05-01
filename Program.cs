@@ -177,9 +177,6 @@ public class Program{
         
        } while (option != 0);
 
-
-        //Percorrendo e imprimindo as músicas do Álbum Euphoria
-
     
 
     }
