@@ -1,54 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 public class Program{
-
-    static void Menu(){
-
-        Console.WriteLine("\t  ______________________________________________________________\n" +
-                             "\t.'  __________________________________________________________  '.\n" +
-                             "\t: .'                                                          '.  :\n" +
-                             "\t| |       _______________________________________________       | |\n" +
-                             "\t| |    .:________________________________________________ :.    | |\n" +
-                             "\t| |    |           INICIANDO EM LINQ E LAMBDA              |    | |\n" +
-                             "\t| |    |                                                   |    | |\n" +
-                             "\t| |    |                  MENU PRINCIPAL:                  |    | |\n" +
-                             "\t| |    |                                                   |    | |\n" +
-                             "\t| |    |   1 - Todos os álbuns de um artista.              |    | |\n" +
-                             "\t| |    |   2 - Todos os álbuns de um ano.                  |    | |\n" +
-                             "\t| |    |   3 - As músicas de um Artista.                   |    | |\n" +
-                             "\t| |    |   4 - As músicas de um Artista em um Ano.         |    | |\n" +
-                             "\t| |    |   5 - Álbuns do mesmo gênero de um produtor.      |    | |\n" +
-                             "\t| |    |   6 - Álbuns do mesmo ano de um produtor.         |    | |\n" +
-                             "\t| |    |   7 - Lista decrescente dos Álbuns de um artista. |    | |\n" +
-                             "\t| |    |   0 - Sair                                        |    | |\n" +
-                             "\t| |    |                                                   |    | |\n" +
-                             "\t| |    |            __________________________             |    | |\n" +
-                             "\t| |    |           |  |  |  |  |  |  |  |  |  |            |    | |\n" +
-                             "\t| |    '.__________|__|__|__|__|__|__|__|__|__|__________ .'    | |\n" +
-                             "\t| |                                                             | |\n" +
-                             "\t| |                 Lista de Exercícios 1 - TP                  | |\n" +
-                             "\t: '.__________________________________________________________.'  :\n" +
-                             "\t'._____________________________/__ /____________________________.'\n\n\n");
- 
-    }
-
-    public static List<Album> AlbumsofArtist(Artist artist, string name){ 
-                                
-        
-        List<Album> ListAlbums = (from item in artist.ArtistAlbums where item.artist.Name.Equals(name) select item).ToList();
-
-        return ListAlbums;
-
-    }
-
-
-
     static void Main(string[] args){
 
         //Variáveis do menu
 
         int option = 0;
-        string name = "";
+        int option_menu = 0;
 
         //Artistas
 
@@ -109,75 +67,96 @@ public class Program{
 
         //Parte de Interação com o Usuário
 
-       do
-       {
-           
-        Menu();
-        Console.Write("Escolha uma opção: ");
-        option = int.Parse(Console.ReadLine());
+        do
+        {
+            //Menu Principal para opções implementadas do LINQ e LAMBDA
 
-        if (option != 0){
+            Menus.MainMenu();
+            Console.Write("Escolha uma opção: ");
+            option = int.Parse(Console.ReadLine());
 
-                Console.Clear();
-        }
+            if (option != 0){
 
-        switch(option){
-
-            case 1:
-
-            Console.Write("\nDigite um nome:");
-            name = Console.ReadLine();
-
-            List<Album> albums_of_artist = AlbumsofArtist(Labrinth, name);
- 
-            Console.WriteLine("\nÁlbuns desse cantor:\n");
-
-            foreach(var elemento in albums_of_artist){
-
-             Console.WriteLine(elemento.NameAlmbum);
-
+                    Console.Clear();
             }
 
-            Console.ReadLine();
+            //Opções de escolha do Menu Principal
 
-            break;
+            switch(option){
 
-            case 2:
+                case 1:
 
-            break;
+                do{
 
-            case 3:
+                Menus.Menu_albums_of_Artist();
+                Console.Write("\nEscolha uma opção: ");
+                option_menu = int.Parse(Console.ReadLine());
 
-            break;
+                    switch(option_menu){
 
-            case 4:
+                        case 1:
 
-            break;
+                        List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth);
 
-            case 5:
+                        Console.WriteLine("\n");
 
-            break;
+                        foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
 
-            case 6:
+                        Console.ReadLine();
 
-            break;
+                        break;
 
-            case 7:
+                        case 0:
+                        break;
 
-            break;
+                        default:
 
-            case 0:
+                        Console.WriteLine("Entrada Inválida");
+                        break;
+                    }
 
-            break;
+                    Console.Clear();
 
-            default:
+                } while(option_menu!=0);
 
-            break;
-        }
+                break;
+
+                case 2:
+
+                break;
+
+                case 3:
+
+                break;
+
+                case 4:
+
+                break;
+
+                case 5:
+
+                break;
+
+                case 6:
+
+                break;
+
+                case 7:
+
+                break;
+
+                case 0:
+
+                break;
+
+                default:
+
+                break;
+            }
+            
+        } while (option != 0);
+
         
-       } while (option != 0);
 
-    
-
-    }
+        }
 }
