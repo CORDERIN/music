@@ -21,11 +21,10 @@
 
      public static List<Music> MusicsArtist(Artist artist){ 
                                 
-        List<Music> ListMusics = (from item in artist.ArtistAlbums select item.Musics).ToList();
+        var ListMusics = (artist.ArtistAlbums.SelectMany(x => x.Musics)).ToList();
 
         return ListMusics;
 
     }
-
 
   }

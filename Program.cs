@@ -182,11 +182,11 @@ public class Program{
 
                             case 1:
 
-                            List<Album> musics_of_artist = LinqAndLambda.MusicsArtist(Labrinth);
+                            List<Music> musics_of_artist = LinqAndLambda.MusicsArtist(Labrinth);
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in musics_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            foreach(var elemento in musics_of_artist) Console.WriteLine(elemento.NameMusic);
 
                             Console.ReadLine();
 
