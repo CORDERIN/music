@@ -16,7 +16,7 @@ public class Program{
 
         Producer Masterworks = new Producer("Milan Henry", "061.743.987-12", new DateTime(1983, 03, 19), new DateTime(), "Masterworks");
 
-        //Gêneros musicais que a produrora produz
+        //Gêneros musicais da produrora Masterworks
 
         Masterworks.Musical_genres.Add("Eletrônica");
         Masterworks.Musical_genres.Add("Rap");
@@ -57,13 +57,18 @@ public class Program{
         Euphoria.Musics.Add(ArrivalAtTheFormal);
         Euphoria.Musics.Add(Gangster);
 
-        //Adicionando os álbumns do cantor
+        //Adicionando os álbumns do Labrinth
 
         Labrinth.ArtistAlbums.Add(Euphoria);
 
-        //Adicionando os álbumns da produtora
+        //Adicionando os álbumns da MasterWorks
 
         Masterworks.ProducerAlbums.Add(Euphoria);
+
+        //Todos os álbums
+
+        List<Album> All_Albums = new List<Album>();
+        All_Albums.Add(Euphoria);
 
         //Parte de Interação com o Usuário
 
@@ -88,34 +93,36 @@ public class Program{
 
                 do{
 
-                Menus.Menu_albums_of_Artist();
-                Console.Write("\nEscolha uma opção: ");
-                option_menu = int.Parse(Console.ReadLine());
+                    //Albúns dos Artistas
 
-                    switch(option_menu){
+                    Menus.Menu_albums_of_Artist();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
 
-                        case 1:
+                        switch(option_menu){
 
-                        List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth);
+                            case 1:
 
-                        Console.WriteLine("\n");
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
 
-                        foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            Console.WriteLine("\n");
 
-                        Console.ReadLine();
+                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
 
-                        break;
+                            Console.ReadLine();
 
-                        case 0:
-                        break;
+                            break;
 
-                        default:
+                            case 0:
+                            break;
 
-                        Console.WriteLine("Entrada Inválida");
-                        break;
-                    }
+                            default:
 
-                    Console.Clear();
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
 
                 } while(option_menu!=0);
 
@@ -123,40 +130,256 @@ public class Program{
 
                 case 2:
 
+                do{
+
+                    //Albúns do ano
+
+                    Menus.Menu_albums_of_year();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
+
+                        switch(option_menu){
+
+                            case 1:
+
+                            List<Album> albums_of_year = LinqAndLambda.AlbumsofYear(All_Albums, Euphoria.ReleaseDate.Year);
+
+                            Console.WriteLine("\n");
+
+                            foreach(var elemento in albums_of_year) Console.WriteLine(elemento.NameAlmbum);
+
+                            Console.ReadLine();
+
+                            break;
+
+                            case 0:
+                            break;
+
+                            default:
+
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
+
+                } while(option_menu!=0);
+
+
                 break;
 
                 case 3:
+
+                do{
+
+                    //Albúns dos Artistas
+
+                    Menus.MusicsArtist();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
+
+                        switch(option_menu){
+
+                            case 1:
+
+                            List<Album> musics_of_artist = LinqAndLambda.MusicsArtist(Labrinth);
+
+                            Console.WriteLine("\n");
+
+                            foreach(var elemento in musics_of_artist) Console.WriteLine(elemento.NameAlmbum);
+
+                            Console.ReadLine();
+
+                            break;
+
+                            case 0:
+                            break;
+
+                            default:
+
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
+
+                } while(option_menu!=0);
+
 
                 break;
 
                 case 4:
 
+                do{
+
+                    //Albúns dos Artistas
+
+                    Menus.Menu_albums_of_Artist();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
+
+                        switch(option_menu){
+
+                            case 1:
+
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+
+                            Console.WriteLine("\n");
+
+                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+
+                            Console.ReadLine();
+
+                            break;
+
+                            case 0:
+                            break;
+
+                            default:
+
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
+
+                } while(option_menu!=0);
+
+
                 break;
 
                 case 5:
+
+                do{
+
+                    //Albúns dos Artistas
+
+                    Menus.Menu_albums_of_Artist();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
+
+                   
+                        switch(option_menu){
+
+                            case 1:
+
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+
+                            Console.WriteLine("\n");
+
+                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+
+                            Console.ReadLine();
+
+                            break;
+
+                            case 0:
+                            break;
+
+                            default:
+
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
+
+                } while(option_menu!=0);
+
 
                 break;
 
                 case 6:
 
+                do{
+
+                    //Albúns dos Artistas
+
+                    Menus.Menu_albums_of_Artist();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
+
+                        switch(option_menu){
+
+                            case 1:
+
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+
+                            Console.WriteLine("\n");
+
+                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+
+                            Console.ReadLine();
+
+                            break;
+
+                            case 0:
+                            break;
+
+                            default:
+
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
+
+                } while(option_menu!=0);
+
+
                 break;
 
                 case 7:
 
+                do{
+
+                    //Albúns dos Artistas
+
+                    Menus.Menu_albums_of_Artist();
+                    Console.Write("\nEscolha uma opção: ");
+                    option_menu = int.Parse(Console.ReadLine());
+
+                        switch(option_menu){
+
+                            case 1:
+
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+
+                            Console.WriteLine("\n");
+
+                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+
+                            Console.ReadLine();
+
+                            break;
+
+                            case 0:
+                            break;
+
+                            default:
+
+                            Console.WriteLine("Entrada Inválida");
+                            break;
+                        }
+
+                        Console.Clear();
+
+                } while(option_menu!=0);
+
+
                 break;
 
                 case 0:
-
                 break;
 
                 default:
+
+                Console.WriteLine("Entrada Inválida");
 
                 break;
             }
             
         } while (option != 0);
 
-        
-
-        }
+    }
 }
