@@ -25,7 +25,7 @@ public class Program{
 
         //Álbum Euphoria
 
-        Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2019, 10, 04));
+        Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2020, 10, 04));
 
         //Inicializando músicas "soltas"
 
@@ -34,10 +34,10 @@ public class Program{
         Music Forever = new Music("Forever", 3.2, "Eletrónica", new DateTime(2019, 10, 04));
         Music When_I_RIP = new Music("When I R.I.P", 3.8, "Eletrónica", new DateTime(2019, 10, 04));
         Music ImTired = new Music("I'am Tired", 3.5, "Eletrónica", new DateTime(2019, 10, 04));
-        Music Still_Dont_Know_My_Name = new Music("Still Don't Know My Name", 2.93, "Eletrónica", new DateTime(2019, 10, 04));
-        Music EliotsSong = new Music("Eliot's Song", 3.5, "Eletrónica", new DateTime(2019, 10, 04));
+        Music Still_Dont_Know_My_Name = new Music("Still Don't Know My Name", 2.93, "Eletrónica", new DateTime(2020, 10, 04));
+        Music EliotsSong = new Music("Eliot's Song", 3.5, "Eletrónica", new DateTime(2020, 10, 04));
         Music NateGrowingUp = new Music("Nate Growing Up", 2.5, "Eletrónica", new DateTime(2019, 10, 04));
-        Music WeAllKnew = new Music("We All Knew", 3.01, "Eletrónica", new DateTime(2019, 10, 04));
+        Music WeAllKnew = new Music("We All Knew", 3.01, "Eletrónica", new DateTime(2020, 10, 04));
         Music WTF_AreWeTalkingFor = new Music("WTF Are We Talking For", 2.8, "Eletrónica", new DateTime(2019, 10, 04));
         Music ArrivalAtTheFormal = new Music("Arrival At The Formal", 5.95, "Eletrónica", new DateTime(2019, 10, 04));
         Music Gangster = new Music("Gangster", 2.5, "Eletrónica", new DateTime(2019, 10, 04));
@@ -214,19 +214,23 @@ public class Program{
 
                     //Albúns dos Artistas
 
-                    Menus.Menu_albums_of_Artist();
+                    Menus.MusicsArtistYear();
                     Console.Write("\nEscolha uma opção: ");
                     option_menu = int.Parse(Console.ReadLine());
+
+                    if(option_menu != 0) Console.Write("\nDigite o ano que deseja buscar: ");
+             
+                    int year = int.Parse(Console.ReadLine());
 
                         switch(option_menu){
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+                            List<Music> musicsArtistYear = LinqAndLambda.MusicsArtistofYear(Labrinth, year);
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            foreach(var elemento in musicsArtistYear) Console.WriteLine(elemento.NameMusic);
 
                             Console.ReadLine();
 

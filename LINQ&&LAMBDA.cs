@@ -10,10 +10,10 @@
 
     }
 
-    public static List<Album> AlbumsofYear(List<Album> album, int ano){ 
+    public static List<Album> AlbumsofYear(List<Album> album, int year){ 
                                 
         
-        List<Album> ListAlbums = (from item in album where item.ReleaseDate.Year.Equals(ano) select item).ToList();
+        List<Album> ListAlbums = (from item in album where item.ReleaseDate.Year.Equals(year) select item).ToList();
 
         return ListAlbums;
 
@@ -24,6 +24,16 @@
         var ListMusics = (artist.ArtistAlbums.SelectMany(x => x.Musics)).ToList();
 
         return ListMusics;
+
+    }
+
+    public static List<Music> MusicsArtistofYear(Artist artist, int year){ 
+                                
+        var ListAllMusics = MusicsArtist(artist);
+
+        var ListMusicsofYear = (from item in ListAllMusics where item.RelaseDate.Year.Equals(year) select item).ToList();
+
+        return ListMusicsofYear;
 
     }
 
