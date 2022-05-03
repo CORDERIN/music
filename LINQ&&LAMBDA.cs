@@ -1,10 +1,10 @@
   
   public class LinqAndLambda{
 
-    public static List<Album> AlbumsofArtist(Artist artist, string name){ 
+    public static List<Album> AlbumsofArtist(Artist artist){ 
                                 
         
-        List<Album> ListAlbums = (from item in artist.ArtistAlbums where artist.Name.Equals(name) select item).ToList();
+        List<Album> ListAlbums = (from item in artist.ArtistAlbums select item).ToList();
 
         return ListAlbums;
 
@@ -36,5 +36,23 @@
         return ListMusicsofYear;
 
     }
+
+    public static List<Album> AlbumsProducersGender(Producer producer, string gender){ 
+                                
+        List<Album> ListAlbums = (from elemento in producer.ProducerAlbums where elemento.GenderAlbum.Equals(gender) select elemento).ToList();
+
+        return ListAlbums;
+
+    }
+
+     public static List<Album> AlbumsProducersYear(Producer producer, int year){ 
+                                
+        List<Album> ListAlbums = (from elemento in producer.ProducerAlbums where elemento.ReleaseDate.Year.Equals(year) select elemento).ToList();
+
+        return ListAlbums;
+
+    }
+
+
 
   }

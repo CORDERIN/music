@@ -23,9 +23,10 @@ public class Program{
         Masterworks.Musical_genres.Add("Pop");
         Masterworks.Musical_genres.Add("Rock");
 
-        //Álbum Euphoria
+        //Álbuns
 
         Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2020, 10, 04));
+        Album Batman = new Album(Labrinth, Masterworks, "Batman", "tara", "Euphoria (Original Score from the HBO Series)", new DateTime(2019, 10, 04));
 
         //Inicializando músicas "soltas"
 
@@ -60,10 +61,12 @@ public class Program{
         //Adicionando os álbumns do Labrinth
 
         Labrinth.ArtistAlbums.Add(Euphoria);
+        Labrinth.ArtistAlbums.Add(Batman);
 
         //Adicionando os álbumns da MasterWorks
 
         Masterworks.ProducerAlbums.Add(Euphoria);
+        Masterworks.ProducerAlbums.Add(Batman);
 
         //Todos os álbums
 
@@ -103,11 +106,15 @@ public class Program{
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth);
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            foreach(var elemento in albums_of_artist) {
+                            
+                            Console.WriteLine(elemento.NameAlmbum);
+
+                            }
 
                             Console.ReadLine();
 
@@ -172,7 +179,7 @@ public class Program{
 
                 do{
 
-                    //Albúns dos Artistas
+                    //Músicas dos Artistas
 
                     Menus.MusicsArtist();
                     Console.Write("\nEscolha uma opção: ");
@@ -212,7 +219,7 @@ public class Program{
 
                 do{
 
-                    //Albúns dos Artistas
+                    //Albúns dos Artistas en um ano específico
 
                     Menus.MusicsArtistYear();
                     Console.Write("\nEscolha uma opção: ");
@@ -256,9 +263,9 @@ public class Program{
 
                 do{
 
-                    //Albúns dos Artistas
+                    //Albúns dos Produtores do mesmo gênero
 
-                    Menus.Menu_albums_of_Artist();
+                    Menus.AlbumsProducersGender();
                     Console.Write("\nEscolha uma opção: ");
                     option_menu = int.Parse(Console.ReadLine());
 
@@ -267,11 +274,11 @@ public class Program{
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+                            List<Album> albums_of_producer = LinqAndLambda.AlbumsProducersGender(Masterworks, "tara");
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            foreach(var elemento in albums_of_producer) Console.WriteLine(elemento.NameAlmbum);
 
                             Console.ReadLine();
 
@@ -297,21 +304,25 @@ public class Program{
 
                 do{
 
-                    //Albúns dos Artistas
+                    //Albúns dos Produtor daquele ano
 
-                    Menus.Menu_albums_of_Artist();
+                    Menus.AlbumsProducersYear();
                     Console.Write("\nEscolha uma opção: ");
                     option_menu = int.Parse(Console.ReadLine());
+
+                    if(option_menu != 0) Console.Write("\nDigite o ano que deseja buscar: ");
+             
+                    int year_ = int.Parse(Console.ReadLine());
 
                         switch(option_menu){
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+                            List<Album> albumsProducerYear = LinqAndLambda.AlbumsProducersYear(Masterworks, year_);
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            foreach(var elemento in albumsProducerYear) Console.WriteLine(elemento.NameAlmbum);
 
                             Console.ReadLine();
 
@@ -330,7 +341,6 @@ public class Program{
 
                 } while(option_menu!=0);
 
-
                 break;
 
                 case 7:
@@ -347,7 +357,7 @@ public class Program{
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth, Labrinth.Name);
+                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth);
 
                             Console.WriteLine("\n");
 
