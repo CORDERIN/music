@@ -53,6 +53,12 @@
 
     }
 
+    public static List<Album> OrderAlbumsArtist (Artist artist){
 
+        List<Album> ListAlbums = (AlbumsofArtist(artist)).OrderByDescending(x => x.ReleaseDate.Date).ToList();
+
+        return ListAlbums;
+
+    }
 
   }

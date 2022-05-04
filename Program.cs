@@ -26,7 +26,7 @@ public class Program{
         //Álbuns
 
         Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2020, 10, 04));
-        Album Batman = new Album(Labrinth, Masterworks, "Batman", "tara", "Euphoria (Original Score from the HBO Series)", new DateTime(2019, 10, 04));
+        Album Batman = new Album(Labrinth, Masterworks, "Batman", "tara", "Euphoria (Original Score from the HBO Series)", new DateTime(2021, 10, 04));
 
         //Inicializando músicas "soltas"
 
@@ -106,11 +106,11 @@ public class Program{
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth);
+                            List<Album> albumsAartist = LinqAndLambda.AlbumsofArtist(Labrinth);
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in albums_of_artist) {
+                            foreach(var elemento in albumsAartist) {
                             
                             Console.WriteLine(elemento.NameAlmbum);
 
@@ -274,7 +274,7 @@ public class Program{
 
                             case 1:
 
-                            List<Album> albums_of_producer = LinqAndLambda.AlbumsProducersGender(Masterworks, "tara");
+                            List<Album> albums_of_producer = LinqAndLambda.AlbumsProducersGender(Masterworks, "Eletrónica");
 
                             Console.WriteLine("\n");
 
@@ -347,9 +347,9 @@ public class Program{
 
                 do{
 
-                    //Albúns dos Artistas
+                    //Albúns dos Artistas em ordem de lançamento
 
-                    Menus.Menu_albums_of_Artist();
+                    Menus.Ordem_albums_of_Artist();
                     Console.Write("\nEscolha uma opção: ");
                     option_menu = int.Parse(Console.ReadLine());
 
@@ -357,11 +357,11 @@ public class Program{
 
                             case 1:
 
-                            List<Album> albums_of_artist = LinqAndLambda.AlbumsofArtist(Labrinth);
+                            List<Album> albums_of_artist = LinqAndLambda.OrderAlbumsArtist(Labrinth);
 
                             Console.WriteLine("\n");
 
-                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum);
+                            foreach(var elemento in albums_of_artist) Console.WriteLine(elemento.NameAlmbum + " : "  + elemento.ReleaseDate.Day + "/" + elemento.ReleaseDate.Month+ "/" + elemento.ReleaseDate.Year);
 
                             Console.ReadLine();
 
