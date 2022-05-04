@@ -26,7 +26,6 @@ public class Program{
         //Álbuns
 
         Album Euphoria = new Album(Labrinth, Masterworks, "Euphoria", "Eletrónica", "Euphoria (Original Score from the HBO Series)", new DateTime(2020, 10, 04));
-        Album Batman = new Album(Labrinth, Masterworks, "Batman", "tara", "Euphoria (Original Score from the HBO Series)", new DateTime(2021, 10, 04));
 
         //Inicializando músicas "soltas"
 
@@ -61,12 +60,10 @@ public class Program{
         //Adicionando os álbumns do Labrinth
 
         Labrinth.ArtistAlbums.Add(Euphoria);
-        Labrinth.ArtistAlbums.Add(Batman);
-
+    
         //Adicionando os álbumns da MasterWorks
 
         Masterworks.ProducerAlbums.Add(Euphoria);
-        Masterworks.ProducerAlbums.Add(Batman);
 
         //Todos os álbums
 
